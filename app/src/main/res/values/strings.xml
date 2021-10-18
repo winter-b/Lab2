@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="selection_array">
+        <item>Words</item>
+        <item>Symbols</item>
+    </string-array>
+    <string name="app_name">Lab2</string>
+    <string name="TextViewText">Enter text</string>
+    <string name="TextViewErrorText">Input Empty</string>
+</resources>
