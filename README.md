@@ -1,6 +1,5 @@
 # Lab2
-
-ĘĘTeksto skaičiavimo programėlė
+##Teksto skaičiavimo programėlė
 
 
 Naudojant „Android Studio“ integruotą programavimo aplinką (IDE), sukurti žodžių ir rašybos ženklų skaičiavimo programėlę. Programėlė turi tenkinti šiuos reikalavimus:
