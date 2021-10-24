@@ -5,7 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringService {
-    private static String basePattern =  "[\\s,.]";
+    private static String basePattern =  "[-!$%^&*()_+|~=`{}\\[\\]:\";'<>?,.\\\\\\/\\s]";
+
     public static int CountWords(String input){
         String[] arr = input.split(basePattern.concat("+"));
         return arr.length;

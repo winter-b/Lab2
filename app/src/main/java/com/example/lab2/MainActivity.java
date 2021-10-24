@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.MessageFormat;
+
 public class MainActivity extends AppCompatActivity {
     private Button mButton1;
     private EditText et;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         sp.setAdapter(adapter);
 
         tv = findViewById(R.id.text_view);
+        tv.setText(R.string.TextViewText);
         mButton1 = findViewById(R.id.button_send);
 
         mButton1.setOnClickListener(new View.OnClickListener() {
@@ -41,19 +44,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String input = et.getText().toString();
                 if(input.equals("")){
-                    tv.setText("Input empty");
+                    tv.setText(getString(R.string.TextViewErrorText));
                     tv.setTextColor(Color.RED);
+                    Toast.makeText(MainActivity.this, getString(R.string.TextViewErrorText), Toast.LENGTH_LONG).show();
 
                 }
                 else{
                     if(sp.getSelectedItem().toString().equals("Words")) {
                         int count = ss.CountWords(input);
-                        tv.setText(count + " words");
+                        tv.setText(MessageFormat.format("{0} {1}", count, getString(R.string.Words)));
                         tv.setTextColor(Color.GREEN);
                     }
                     else{
                         int count = ss.CountSymbols(input);
-                        tv.setText(count + " symbols");
+                        tv.setText(MessageFormat.format("{0} {1}", count, getString(R.string.Symbols)));
                         tv.setTextColor(Color.BLUE);
                     }
                 }
